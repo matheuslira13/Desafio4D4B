@@ -1,0 +1,22 @@
+@import "../../global.scss";
+
+.container {
+  display: flex;
+  flex: 1;
+  background-color: $white;
+  justify-content: flex-end;
+  border-radius: 20px;
+  .balanceInfo {
+    height: 50px;
+    width: 300px;
+    background-color: $secondary;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .subBalanceInfo {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
