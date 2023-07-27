@@ -25,7 +25,7 @@ export const RowForm = ({
   space,
 }: RowFormProps) => {
   return (
-    <div>
+    <div data-testid="row-container">
       {fullWeight && (
         <Typography
           i18nPath={`home.form.${fullWeight}`}
@@ -79,6 +79,7 @@ export const RowForm = ({
                 i18nPath="home.form.btn.firstBtn"
                 BGcolor="secondary"
                 type="fill"
+                onClick={() => {}}
               />
             )}
           </div>
@@ -89,6 +90,7 @@ export const RowForm = ({
               i18nPath="home.form.btn.secondBtn"
               BGcolor="tertiary"
               type="fill"
+              onClick={() => {}}
             />
           )}
         </div>

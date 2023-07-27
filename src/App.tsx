@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes, useParams } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Header, Navbar } from "./components";
 import { store } from "./ducks/store";
@@ -16,8 +16,8 @@ function App() {
         <Header />
         <Layout>
           <Routes>
-            <Route Component={HomeScreen} path="/" />
-            <Route Component={UploadScreen} path="/doc" />
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/doc/:id" element={<UploadScreen />} />
           </Routes>
         </Layout>
       </BrowserRouter>

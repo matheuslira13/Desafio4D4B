@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./style.module.scss";
+import { useParams } from "react-router-dom";
 
 export const Navbar = () => {
+  const { id } = useParams();
+
   return (
     <nav className={styles.container}>
       <ul className={styles.ul}>
         <li className={styles.past}>
           <span>1</span> Produtos
         </li>
-        <li className={styles.current}>
-          <span>2</span> Cliente
-        </li>
+        {!id && (
+          <li className={styles.current}>
+            <span>2</span> Cliente
+          </li>
+        )}
+        {id && (
+          <>
+            <li className={styles.past}>
+              <span>2</span> Cliente
+            </li>
+            <li className={styles.current}>
+              <span>3</span> Anexar Arquivo
+            </li>
+          </>
+        )}
         <li>
           <span>3</span> Anexar Arquivo
         </li>

@@ -3,12 +3,56 @@
   background-color: $white;
   padding: 20px 30px;
   border-radius: 5px;
+
+  .containerForm {
+    padding: 13px 16px;
+    width: 70%;
+    border: 2px dashed $secondary;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    .containerDrop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .containerTexts {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 3px;
+        .title {
+          color: $black;
+          font-size: 12px;
+          font-weight: 600;
+        }
+        .subTitle {
+          color: $gray;
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+      .wrapperIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $secondary;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        margin-left: 20px;
+      }
+    }
+  }
   .divider {
     width: 24px;
     height: 3px;
     background-color: $primary;
   }
-  .footerForm {
+  .wrapperButtons {
     display: flex;
     gap: 16px;
   }

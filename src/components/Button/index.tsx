@@ -21,6 +21,7 @@ type ButtonProps = {
     | "white"
     | "gray"
     | "default";
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export const Button = ({
@@ -28,6 +29,7 @@ export const Button = ({
   type,
   BGcolor = "primary",
   color = "primary",
+  onClick,
 }: ButtonProps) => {
   let selectBGColor = {
     primary: styles.primaryBgColor,
@@ -64,7 +66,7 @@ export const Button = ({
     );
   }
   return (
-    <button className={selectColor}>
+    <button className={selectColor} onClick={onClick}>
       {t(i18nPath)}
       <hr />
     </button>

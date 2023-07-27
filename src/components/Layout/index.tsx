@@ -10,7 +10,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="layout-container">
       <aside className={styles.leftBlock}></aside>
       <section className={styles.mainContainer}>
         <div className={styles.rightBlock}>
@@ -28,9 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
               fontWeight="bold"
             />
           </div>
-          <div className={styles.wrapperSpace}>
-            <Navbar />
-          </div>
+          <Navbar />
           <div className={styles.wrapperSpace}>
             <Balance />
           </div>
