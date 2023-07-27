@@ -10,7 +10,7 @@
     border: 2px dashed $secondary;
     background-color: $white;
     text-transform: uppercase;
-    text-align: center;
+    align-items: center;
     justify-content: center;
     display: flex;
     margin-top: 10px;
@@ -36,16 +36,16 @@
           font-weight: 400;
         }
       }
-      .wrapperIcon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $secondary;
-        border-radius: 50%;
-        width: 22px;
-        height: 22px;
-        margin-left: 20px;
-      }
+    }
+    .wrapperIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $secondary;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      margin-left: 20px;
     }
     .wrapperError {
       display: flex;
@@ -65,6 +65,11 @@
         font-size: 12px;
         font-weight: 600;
         color: #e8225f;
+      }
+      .sucessName {
+        font-size: 12px;
+        font-weight: 400;
+        color: #71839b;
       }
     }
   }

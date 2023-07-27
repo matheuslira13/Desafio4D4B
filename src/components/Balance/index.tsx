@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import { Typography } from "../Typography";
 import { Icons } from "../Icon";
 import { useSelector } from "react-redux";
-import { formatMoney } from "../../utils/formatMoney";
+import { formatMoney } from "../../utils/format";
 
 export const Balance = () => {
   //@ts-ignore

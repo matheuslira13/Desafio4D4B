@@ -15,6 +15,7 @@ $tertiary: #4b8db5;
 $black: #404554;
 $white: #fff;
 $gray: #9ea1b0;
+$error: #f92828;
 
 .primary {
   color: $primary;
@@ -33,6 +34,9 @@ $gray: #9ea1b0;
 }
 .black {
   color: $black;
+}
+.error {
+  color: $error;
 }
 .default {
   color: black;
