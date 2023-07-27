@@ -1,0 +1,22 @@
+@import "../../global.scss";
+.separetor {
+  width: 80%;
+  height: 1px;
+  background-color: $gray;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.containerForm {
+  background-color: $white;
+  padding: 20px 30px;
+  border-radius: 5px;
+  .divider {
+    width: 24px;
+    height: 3px;
+    background-color: $primary;
+  }
+  .footerForm {
+    display: flex;
+    gap: 16px;
+  }
+}

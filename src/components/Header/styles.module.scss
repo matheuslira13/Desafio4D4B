@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 40px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  background-color: white;
+
+  .containerIcons {
+    display: flex;
+    gap: 24px;
+
+    .wrapperIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f4f5;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+  }
+}

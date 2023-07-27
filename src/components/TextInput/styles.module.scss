@@ -1,0 +1,22 @@
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../Icon//svgs/downGreen.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  border: 1px solid #c6d5db;
+  background-color: white;
+  padding: 5px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.container {
+  color: #c6d5db;
+  padding: 5px 14px;
+  border-radius: 5px;
+  border: 1px solid #c6d5db;
+  font-size: 13;
+  font-weight: 400;
+}

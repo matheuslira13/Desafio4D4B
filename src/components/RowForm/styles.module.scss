@@ -1,0 +1,27 @@
+@import "../../global.scss";
+.separetor {
+  width: 80%;
+  height: 1px;
+  background-color: $gray;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.cover {
+  display: flex;
+  align-items: center;
+  .firsLineLeftSide {
+    display: flex;
+    flex: 2;
+    padding-right: 16px;
+
+    .wrapper {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+  }
+  .firsLineRightSide {
+    display: flex;
+    flex: 1;
+  }
+}

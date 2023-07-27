@@ -1,25 +1,27 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import { Header, Navbar } from "./components";
+import { store } from "./ducks/store";
+import { HomeScreen } from "./screens/Home_Screen";
+import { UploadScreen } from "./screens/Upload.Screen";
+import Layout from "./components/Layout";
+
+import "./i18n";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          First commit
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Layout>
+          <Routes>
+            <Route Component={HomeScreen} path="/" />
+            <Route Component={UploadScreen} path="/doc" />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

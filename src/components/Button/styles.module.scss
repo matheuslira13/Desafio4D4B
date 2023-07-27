@@ -1,0 +1,173 @@
+@import "../../global.scss";
+
+.primaryBgColor {
+  background-color: $primary;
+  color: $white;
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.secondaryBgColor {
+  background-color: $secondary;
+  color: $white;
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.tertiaryBgColor {
+  background-color: $tertiary;
+  color: $white;
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.grayBgColor {
+  background-color: $gray;
+  color: $white;
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.whiteBgColor {
+  background-color: $white;
+  color: $black;
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.blackBgColor {
+  background-color: $black;
+  color: $white;
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.defaultBgColor {
+  background-color: black;
+  color: $white;
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+//empyt button
+
+.primaryColor {
+  color: $primary;
+  background-color: "unset";
+  border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.secondaryColor {
+  color: $secondary;
+  background-color: $white;
+  border: 2px solid $secondary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.tertiaryColor {
+  color: $tertiary;
+  background-color: "unset";
+  border: 2px solid $tertiary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.grayColor {
+  color: $gray;
+  background-color: "unset";
+  border: 1px solid $gray;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.whiteColor {
+  color: $white;
+  background-color: "unset";
+  border: 1px solid $white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.blackColor {
+  color: $black;
+  background-color: "unset";
+  border: 1px solid $black;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.defaultColor {
+  color: black;
+  background-color: "unset";
+  border: 1px solid black;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
