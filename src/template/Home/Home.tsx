@@ -17,7 +17,7 @@ export type HomeProps = {
 
 const Home = ({ formData }: HomeProps) => {
   return (
-    <div className={styles.containerForm}>
+    <div className={styles.containerForm} data-testid="home-container">
       <Typography
         i18nPath="home.form.searchTitle"
         size={18}
@@ -45,20 +45,23 @@ const Home = ({ formData }: HomeProps) => {
         type="empty"
         i18nPath="home.form.btn.thirdBtn"
         color="secondary"
+        onClick={() => {}}
       />
       <div className={styles.separetor} />
       <div className={styles.footerForm}>
-        <Link to="/doc" style={{ textDecoration: "none" }}>
+        <Link to="/doc/doc" style={{ textDecoration: "none" }}>
           <Button
             i18nPath="home.form.btn.fourthBtn"
             type="fill"
             BGcolor="primary"
+            onClick={() => {}}
           />
         </Link>
         <Button
           i18nPath="home.form.btn.fifthBtn"
           type="empty"
           color="secondary"
+          onClick={() => {}}
         />
       </div>
     </div>
