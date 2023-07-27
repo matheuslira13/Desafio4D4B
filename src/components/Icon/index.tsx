@@ -2,10 +2,11 @@ import { ReactComponent as Bell } from "./svgs/bell.svg";
 import { ReactComponent as Profile } from "./svgs/profile.svg";
 import { ReactComponent as Down } from "./svgs/down.svg";
 import { ReactComponent as Up } from "./svgs/up.svg";
+import { ReactComponent as Repeat } from "./svgs/repeat.svg";
 import styles from "./styles.module.scss";
 
 export type IconsProps = {
-  name: "bell" | "profile" | "down" | "up";
+  name: "bell" | "profile" | "down" | "up" | "repeat";
   width: number;
   height: number;
   color?:
@@ -34,6 +35,7 @@ export const Icons = ({ name, color = "black", height, width }: IconsProps) => {
     profile: <Profile className={selectColor} style={{ height, width }} />,
     down: <Down className={selectColor} style={{ height, width }} />,
     up: <Up className={selectColor} style={{ height, width }} />,
+    repeat: <Repeat className={selectColor} style={{ height, width }} />,
   };
 
   return show[name];

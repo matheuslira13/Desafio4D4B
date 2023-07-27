@@ -1,9 +1,40 @@
+import React, { useState } from "react";
 import styles from "./Upload.module.scss";
 import { Typography, Icons, Button } from "../../components";
 import { useTranslation } from "react-i18next";
+import { useDropzone } from "react-dropzone";
+import { ReactComponent as PDF } from "../../components/Icon/svgs/pdf.svg";
 
 const Upload = () => {
   const { t } = useTranslation();
+  const [fileName, setFileName] = useState<any>(null);
+  const [fileError, setFileError] = useState("");
+  const [fileSucess, setSucess] = useState(false);
+
+  const maxSize = 10;
+
+  const onDrop = async (acceptedFiles: any) => {
+    const file = acceptedFiles?.[0];
+    if (file) {
+      if (file.size > maxSize * 10000 * 10000) {
+        setFileName(file.name);
+        setFileError("O arquivo é muito grande para upload.");
+      } else {
+        const fileData = {
+          name: file.name,
+          size: file.size,
+          lastModified: file.lastModified,
+        };
+        setFileName(fileData);
+        setSucess(true);
+        const formData = new FormData();
+        formData.append("file", file);
+      }
+    }
+  };
+
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
   return (
     <div className={styles.container} data-testid="container-upload">
       <Typography
@@ -13,14 +44,46 @@ const Upload = () => {
         i18nPath="upload.title"
         orientation="left"
       />
+
       <div className={styles.divider} />
 
-      <form
-        action=""
-        className={styles.containerForm}
-        onClick={() => document.getElementById("file")?.click()}
-      >
-        <input id="file" type="file" accept="application/pdf" hidden />
+      {fileSucess && (
+        <div
+          className={styles.containerForm}
+          style={{ justifyContent: "space-between" }}
+        >
+          <div className={styles.wrapperError}>
+            <PDF />
+
+            <div className={styles.containerFileInfo}>
+              <label className={styles.nameFilme}>{fileName.name} </label>
+              <label
+                className={styles.errorMensager}
+              >{`${fileName.size},${fileName.lastModified}`}</label>
+            </div>
+          </div>
+          <Icons height={22} width={22} name="repeat" color="secondary" />
+        </div>
+      )}
+
+      {fileError && (
+        <div
+          className={styles.containerForm}
+          style={{ borderColor: "#E8225F" }}
+        >
+          <div className={styles.wrapperError}>
+            <PDF />
+            <div className={styles.containerFileInfo}>
+              <label className={styles.error}>{fileName.name} </label>
+              <label className={styles.errorMensager}>{fileError}</label>
+            </div>
+            <Icons height={22} width={22} name="repeat" color="secondary" />
+          </div>
+        </div>
+      )}
+
+      <div {...getRootProps()} className={styles.containerForm}>
+        <input {...getInputProps()} accept="application/pdf" hidden />
         <div className={styles.containerDrop}>
           <div className={styles.containerTexts}>
             <p className={styles.title}>{t("upload.uploadTitle")}</p>
@@ -30,7 +93,7 @@ const Upload = () => {
             <Icons name="up" height={11} width={11} color="secondary" />
           </div>
         </div>
-      </form>
+      </div>
       <div className={styles.separetor} />
       <div className={styles.wrapperButtons}>
         <Button

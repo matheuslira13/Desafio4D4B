@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { UserInfo } from "../components/TextInput";
 import { mockuser } from "../utils/mockUser";
 import { TextInputWithLabelProps, RowFormProps } from "../components/RowForm";
 import { updateUser, userActions } from "../ducks/userStore";
+import axios from "axios";
 
 export const useHome = () => {
+  useEffect(() => {
+    getAllUser();
+  }, []);
+  const [allUser, setAllUser] = useState<UserInfo[]>();
+  const getAllUser = async () => {
+    try {
+      await axios.get(`http://localhost:3000/`);
+      setAllUser(mockuser);
+    } catch (error) {
+      console.log("error");
+    }
+  };
   const dispatch = useDispatch();
   const [user, setUser] = useState<UserInfo>({
     name: "Selecione um usuario",
@@ -95,7 +108,7 @@ export const useHome = () => {
             balance: 50,
           },
         })
-      ) as any;
+      );
     } else if (selectedUser === "MK Solutions") {
       setUser({
         ...user,
@@ -131,7 +144,7 @@ export const useHome = () => {
             balance: 1000000,
           },
         })
-      ) as any;
+      );
     } else {
       setUser({
         ...user,
@@ -149,7 +162,7 @@ export const useHome = () => {
         gender: "",
         balance: 0,
       });
-      dispatch(updateUser({ user })) as any;
+      dispatch(updateUser({ user }));
     }
   };
   const rowName: TextInputWithLabelProps[] = [
@@ -157,7 +170,7 @@ export const useHome = () => {
       onChange: handleUserChange,
       type: "select",
       value: user?.name,
-      option: mockuser,
+      option: allUser,
     },
   ];
 
