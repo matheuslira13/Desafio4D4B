@@ -8,10 +8,11 @@
     padding: 13px 16px;
     width: 70%;
     border: 2px dashed $secondary;
-    color: #fff;
+    background-color: $white;
     text-transform: uppercase;
     text-align: center;
-    display: block;
+    justify-content: center;
+    display: flex;
     margin-top: 10px;
     border-radius: 4px;
     cursor: pointer;
@@ -44,6 +45,26 @@
         width: 22px;
         height: 22px;
         margin-left: 20px;
+      }
+    }
+    .wrapperError {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .containerFileInfo {
+      display: flex;
+      flex-direction: column;
+      .nameFilme {
+        font-size: 14px;
+        font-weight: 500;
+        color: $secondary;
+        text-align: justify;
+      }
+      .errorMensager {
+        font-size: 12px;
+        font-weight: 600;
+        color: #e8225f;
       }
     }
   }
