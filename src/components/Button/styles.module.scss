@@ -1,5 +1,11 @@
 @import "../../global.scss";
 
+.containerButton {
+  border: none;
+  cursor: pointer;
+  white-space: "nowrap";
+}
+
 .primaryBgColor {
   background-color: $primary;
   color: $white;

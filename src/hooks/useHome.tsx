@@ -3,8 +3,9 @@ import { useDispatch } from "react-redux";
 import { UserInfo } from "../components/TextInput";
 import { mockuser } from "../utils/mockUser";
 import { TextInputWithLabelProps, RowFormProps } from "../components/RowForm";
-import { updateUser, userActions } from "../ducks/userStore";
+import { updateUser } from "../ducks/userStore";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const useHome = () => {
   useEffect(() => {
@@ -19,7 +20,18 @@ export const useHome = () => {
       console.log("error");
     }
   };
+
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const goToProduct = () => {
+    navigate("/product");
+  };
+
+  const goToDoc = () => {
+    navigate("/doc");
+  };
   const [user, setUser] = useState<UserInfo>({
     name: "Selecione um usuario",
     cpf: "",
@@ -293,5 +305,7 @@ export const useHome = () => {
   ];
   return {
     formData,
+    goToProduct,
+    goToDoc,
   };
 };

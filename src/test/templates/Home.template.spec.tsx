@@ -3,14 +3,12 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import {
-  RowForm,
   RowFormProps,
   TextInputWithLabelProps,
 } from "../../components/RowForm";
-import { UserInfo } from "../../components/TextInput";
-import { StoreProvider } from "../components/provideForTest";
 import HomeTemplate from "../../template/Home/Home";
 import { mockuser } from "../../utils/mockUser";
+import { StoreProvider } from "../components/provideForTest";
 
 describe("RowForm Component", () => {
   const rowName: TextInputWithLabelProps[] = [
@@ -31,9 +29,15 @@ describe("RowForm Component", () => {
   ];
   it("The component must render with fill type", () => {
     render(
-      <MemoryRouter>
-        <HomeTemplate formData={formData} />
-      </MemoryRouter>
+      <StoreProvider>
+        <MemoryRouter>
+          <HomeTemplate
+            formData={formData}
+            goToDoc={() => {}}
+            goToProduct={() => {}}
+          />
+        </MemoryRouter>
+      </StoreProvider>
     );
     const layoutContainer = screen.getByTestId("home-container");
     expect(layoutContainer).toBeTruthy();

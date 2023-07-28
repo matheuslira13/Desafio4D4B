@@ -1,24 +1,20 @@
 import React, { Fragment } from "react";
-import { useState } from "react";
 import styles from "./Home.module.scss";
 
-import { UserInfo } from "../../components/TextInput";
 import { Typography, Navbar, Balance, Button } from "../../components";
-import {
-  RowForm,
-  RowFormProps,
-  TextInputWithLabelProps,
-} from "../../components/RowForm";
-import { Link } from "react-router-dom";
+import { RowForm, RowFormProps } from "../../components/RowForm";
 
 export type HomeProps = {
   formData: RowFormProps[];
+  goToDoc: () => void;
+  goToProduct: () => void;
 };
 
-const Home = ({ formData }: HomeProps) => {
+const Home = ({ formData, goToDoc, goToProduct }: HomeProps) => {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar route={2} />
+      <Balance />
       <div className={styles.containerForm} data-testid="home-container">
         <Typography
           i18nPath="home.form.searchTitle"
@@ -51,19 +47,18 @@ const Home = ({ formData }: HomeProps) => {
         />
         <div className={styles.separetor} />
         <div className={styles.footerForm}>
-          <Link to="/doc/doc" style={{ textDecoration: "none" }}>
-            <Button
-              i18nPath="home.form.btn.fourthBtn"
-              type="fill"
-              BGcolor="primary"
-              onClick={() => {}}
-            />
-          </Link>
+          <Button
+            i18nPath="home.form.btn.fourthBtn"
+            type="fill"
+            BGcolor="primary"
+            onClick={goToDoc}
+          />
+
           <Button
             i18nPath="home.form.btn.fifthBtn"
             type="empty"
             color="secondary"
-            onClick={() => {}}
+            onClick={goToProduct}
           />
         </div>
       </div>

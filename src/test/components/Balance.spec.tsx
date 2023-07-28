@@ -4,6 +4,7 @@ import { render } from "@testing-library/react";
 import { createStore } from "redux";
 import { Balance } from "../../components/Balance";
 import { Provider } from "react-redux";
+import { StoreProvider } from "../components/provideForTest";
 const createTestStore = (FakeinitialState: any) =>
   createStore(() => FakeinitialState);
 
@@ -16,16 +17,16 @@ describe("Must render Component Balance", () => {
   const store = createTestStore(FakeinitialState);
   it("Must render", () => {
     render(
-      <Provider store={store}>
+      <StoreProvider>
         <Balance />
-      </Provider>
+      </StoreProvider>
     );
   });
   it("Balance should be equal to FakeinitalState", () => {
     const { getByText } = render(
-      <Provider store={store}>
+      <StoreProvider>
         <Balance />
-      </Provider>
+      </StoreProvider>
     );
     // eslint-disable-next-line testing-library/prefer-screen-queries
     const balanceElement = getByText("R$ 5.000,00");

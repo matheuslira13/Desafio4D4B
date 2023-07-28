@@ -29,7 +29,7 @@ export const UploadFile = ({ files, erase }: UploadFileProps) => {
   };
   const eraseData = () => {
     setOpenModal(false);
-    //erase(null as unknown as SetStateAction<FileInfoDetails[]>); fazer depois uma exclusão de estado
+    erase(null as unknown as SetStateAction<FileInfoDetails[]>);
   };
   const { t } = useTranslation();
   if (files[0]?.error) {
@@ -48,7 +48,7 @@ export const UploadFile = ({ files, erase }: UploadFileProps) => {
         <Icons height={22} width={22} name="repeat" color="secondary" />
       </div>
     );
-  } else if (files[0]?.size) {
+  } else if (files) {
     return (
       <div className={`${styles.containerForm} ${styles.borderSucess}`}>
         <div className={styles.wrapper}>

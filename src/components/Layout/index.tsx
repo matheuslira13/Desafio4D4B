@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./style.module.scss";
 import { Typography } from "../Typography";
-import { Navbar } from "../NavBar";
-import { Balance } from "../Balance";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -29,9 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
             />
           </div>
 
-          <div className={styles.wrapperSpace}>
-            <Balance />
-          </div>
+          <div className={styles.wrapperSpace}></div>
           {children}
         </div>
       </section>

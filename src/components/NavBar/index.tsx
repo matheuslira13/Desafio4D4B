@@ -1,43 +1,79 @@
-import React, { useEffect } from "react";
+import React, { Fragment } from "react";
 import styles from "./style.module.scss";
-import { useParams } from "react-router-dom";
 
-export const Navbar = () => {
-  const { id } = useParams();
+interface NavbarProps {
+  route: number;
+}
+export const Navbar = ({ route }: NavbarProps) => {
+  const navBarOptions = [
+    {
+      info: "Produtos",
+      currentState: false,
+      pastState: false,
+      normalState: false,
+    },
+    {
+      info: "Cliente",
+      currentState: false,
+      pastState: false,
+      normalState: false,
+    },
+    {
+      info: "Anexar Arquivo",
+      currentState: false,
+      pastState: false,
+      normalState: false,
+    },
+    {
+      info: "Pagamentos",
+      currentState: false,
+      pastState: false,
+      normalState: false,
+    },
+    {
+      info: "Contrato",
+      currentState: false,
+      pastState: false,
+      normalState: false,
+    },
+  ];
+  for (let count = 0; count < navBarOptions.length; count++) {
+    if (route - 1 === count) {
+      navBarOptions[count].currentState = true;
+    } else if (route > count) {
+      navBarOptions[count].pastState = true;
+    } else {
+      navBarOptions[count].normalState = true;
+    }
+  }
 
   return (
     <nav className={styles.container}>
       <ul className={styles.ul}>
-        <li className={styles.past}>
-          <span>1</span> Produtos
-        </li>
-        {!id && (
-          <li className={styles.current}>
-            <span>2</span> Cliente
-          </li>
-        )}
-        {id === "doc" && (
-          <>
-            <li className={styles.past}>
-              <span>2</span> Cliente
-            </li>
-            <li className={styles.current}>
-              <span>3</span> Anexar Arquivo
-            </li>
-          </>
-        )}
-        {!id && (
-          <li>
-            <span>3</span> Anexar Arquivo
-          </li>
-        )}
-
-        <li>
-          <span>4</span> Pagamentos
-        </li>
-        <li>
-          <span>5</span> Contrato
-        </li>
+        {navBarOptions.map((item, index) => {
+          return (
+            <Fragment key={index}>
+              {item.pastState && (
+                <li className={styles.past}>
+                  <span>{route}</span>
+                  {item.info}
+                </li>
+              )}
+              {item.currentState && (
+                <li className={styles.current}>
+                  <span>{route}</span>
+                  {item.info}
+                </li>
+              )}
+              {item.normalState && (
+                <li>
+                  <span>{route}</span>
+                  {item.info}
+                </li>
+              )}
+            </Fragment>
+          );
+        })}
       </ul>
     </nav>
   );
