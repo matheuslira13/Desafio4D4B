@@ -1,20 +1,22 @@
 import React, { Fragment, useState } from "react";
 import styles from "./Upload.module.scss";
-import { Typography, Icons, Button, Navbar } from "../../components";
-import {
-  UploadFile,
-  FileInfoDetails,
-  UploadFileProps,
-} from "../../components/UploadFiles";
+import { Typography, Icons, Button, Navbar, Balance } from "../../components";
+import { UploadFile, FileInfoDetails } from "../../components/UploadFiles";
 
-import { useTranslation } from "react-i18next";
 import { useDropzone } from "react-dropzone";
-import { ReactComponent as PDF } from "../../components/Icon/svgs/pdf.svg";
-import { formatBrazilianDate, formatFileSize } from "../../utils/format";
 import { t } from "i18next";
 
-const Upload = () => {
-  const maxSize = 10;
+type UploadPRops = {
+  handleGoTOPayment: () => void;
+  handlebackClient: () => void;
+  maxSize: number;
+};
+
+const Upload = ({
+  handleGoTOPayment,
+  handlebackClient,
+  maxSize,
+}: UploadPRops) => {
   const [file, setFile] = useState<FileInfoDetails[]>([]);
 
   const onDropAccepted = (files: FileInfoDetails[]) => {
@@ -40,7 +42,8 @@ const Upload = () => {
 
   return (
     <Fragment>
-      <Navbar />
+      <Navbar route={3} />
+      <Balance />
       <div className={styles.container} data-testid="container-upload">
         <Typography
           size={18}
@@ -51,7 +54,7 @@ const Upload = () => {
         />
         <div className={styles.divider} />
 
-        {!!file.length && (
+        {!!file?.length && (
           <UploadFile
             //@ts-ignore
             files={file}
@@ -81,13 +84,13 @@ const Upload = () => {
             i18nPath="upload.btn.firstBtn"
             type="fill"
             BGcolor="primary"
-            onClick={() => {}}
+            onClick={handleGoTOPayment}
           />
           <Button
             i18nPath="upload.btn.secondBtn"
             type="empty"
             color="secondary"
-            onClick={() => {}}
+            onClick={handlebackClient}
           />
         </div>
       </div>

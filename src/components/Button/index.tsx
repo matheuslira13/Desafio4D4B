@@ -33,6 +33,8 @@ export const Button = ({
   color = "primary",
   onClick,
 }: ButtonProps) => {
+  const { t } = useTranslation();
+
   let selectBGColor = {
     primary: styles.primaryBgColor,
     secondary: styles.secondaryBgColor,
@@ -55,23 +57,21 @@ export const Button = ({
     error: styles.errorColor,
   }[color];
 
-  const { t } = useTranslation();
   if (type === "fill") {
     return (
       <button
         onClick={onClick}
-        className={selectBGColor}
-        style={{
-          border: "none",
-          whiteSpace: "nowrap",
-        }}
+        className={`${styles.containerButton} ${selectBGColor}`}
       >
         {t(i18nPath)}
       </button>
     );
   }
   return (
-    <button className={selectColor} onClick={onClick}>
+    <button
+      className={`${styles.containerButton} ${selectColor}`}
+      onClick={onClick}
+    >
       {t(i18nPath)}
       <hr />
     </button>
