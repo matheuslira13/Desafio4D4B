@@ -34,3 +34,15 @@
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .container {
+    grid-template-areas: "content content content ";
+    justify-content: center;
+    .mainContainer {
+      padding: 46px 42px;
+      .rightBlock {
+        align-items: center;
+      }
+    }
+  }
+}
