@@ -7,7 +7,7 @@
   .ul {
     display: flex;
     flex-direction: row;
-    li {
+    .li {
       list-style: none;
       width: 183px;
       text-align: center;
@@ -25,7 +25,7 @@
         padding-right: 10px;
       }
     }
-    li:first-child {
+    .li:first-child {
       border-radius: 20px;
     }
     .current {
@@ -42,6 +42,28 @@
       span {
         color: $white;
       }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    .ul {
+      .li,
+      .li:first-child {
+        height: auto;
+        margin: 0;
+        border-radius: 0;
+        width: auto;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    .ul {
+      flex-direction: column;
     }
   }
 }

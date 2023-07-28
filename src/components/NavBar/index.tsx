@@ -11,30 +11,35 @@ export const Navbar = ({ route }: NavbarProps) => {
       currentState: false,
       pastState: false,
       normalState: false,
+      navIndicador: 1,
     },
     {
       info: "Cliente",
       currentState: false,
       pastState: false,
       normalState: false,
+      navIndicador: 2,
     },
     {
       info: "Anexar Arquivo",
       currentState: false,
       pastState: false,
       normalState: false,
+      navIndicador: 3,
     },
     {
       info: "Pagamentos",
       currentState: false,
       pastState: false,
       normalState: false,
+      navIndicador: 4,
     },
     {
       info: "Contrato",
       currentState: false,
       pastState: false,
       normalState: false,
+      navIndicador: 5,
     },
   ];
   for (let count = 0; count < navBarOptions.length; count++) {
@@ -54,20 +59,20 @@ export const Navbar = ({ route }: NavbarProps) => {
           return (
             <Fragment key={index}>
               {item.pastState && (
-                <li className={styles.past}>
-                  <span>{route}</span>
+                <li className={`${styles.li} ${styles.past}`}>
+                  <span> {item.navIndicador}</span>
                   {item.info}
                 </li>
               )}
               {item.currentState && (
-                <li className={styles.current}>
-                  <span>{route}</span>
+                <li className={`${styles.li} ${styles.current}`}>
+                  <span> {item.navIndicador}</span>
                   {item.info}
                 </li>
               )}
               {item.normalState && (
-                <li>
-                  <span>{route}</span>
+                <li className={styles.li}>
+                  <span> {item.navIndicador}</span>
                   {item.info}
                 </li>
               )}
