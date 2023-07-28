@@ -12,7 +12,8 @@ type ButtonProps = {
     | "black"
     | "white"
     | "gray"
-    | "default";
+    | "default"
+    | "error";
   color?:
     | "primary"
     | "secondary"
@@ -20,7 +21,8 @@ type ButtonProps = {
     | "black"
     | "white"
     | "gray"
-    | "default";
+    | "default"
+    | "error";
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
@@ -39,6 +41,7 @@ export const Button = ({
     gray: styles.grayBgColor,
     white: styles.whiteBgColor,
     default: styles.defaultBgColor,
+    error: styles.errorBgColor,
   }[BGcolor];
 
   let selectColor = {
@@ -49,12 +52,14 @@ export const Button = ({
     gray: styles.grayColor,
     white: styles.whiteColor,
     default: styles.defaultColor,
+    error: styles.errorColor,
   }[color];
 
   const { t } = useTranslation();
   if (type === "fill") {
     return (
       <button
+        onClick={onClick}
         className={selectBGColor}
         style={{
           border: "none",

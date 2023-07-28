@@ -16,7 +16,7 @@ export const Navbar = () => {
             <span>2</span> Cliente
           </li>
         )}
-        {id && (
+        {id === "doc" && (
           <>
             <li className={styles.past}>
               <span>2</span> Cliente
@@ -26,9 +26,12 @@ export const Navbar = () => {
             </li>
           </>
         )}
-        <li>
-          <span>3</span> Anexar Arquivo
-        </li>
+        {!id && (
+          <li>
+            <span>3</span> Anexar Arquivo
+          </li>
+        )}
+
         <li>
           <span>4</span> Pagamentos
         </li>

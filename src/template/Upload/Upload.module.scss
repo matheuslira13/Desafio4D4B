@@ -1,15 +1,19 @@
 @import "../../global.scss";
+
 .container {
   background-color: $white;
   padding: 20px 30px;
   border-radius: 5px;
-
+  .divider {
+    width: 24px;
+    height: 3px;
+    background-color: $primary;
+    margin-bottom: 10px;
+  }
   .containerForm {
     padding: 13px 16px;
     width: 70%;
     border: 2px dashed $secondary;
-    background-color: $white;
-    text-transform: uppercase;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -20,6 +24,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex: 20;
       .containerTexts {
         display: flex;
         align-items: center;
@@ -36,50 +41,40 @@
           font-weight: 400;
         }
       }
-    }
-    .wrapperIcon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $secondary;
-      border-radius: 50%;
-      width: 22px;
-      height: 22px;
-      margin-left: 20px;
-    }
-    .wrapperError {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .containerFileInfo {
-      display: flex;
-      flex-direction: column;
-      .nameFilme {
-        font-size: 14px;
-        font-weight: 500;
-        color: $secondary;
-        text-align: justify;
-      }
-      .errorMensager {
-        font-size: 12px;
-        font-weight: 600;
-        color: #e8225f;
-      }
-      .sucessName {
-        font-size: 12px;
-        font-weight: 400;
-        color: #71839b;
+      .wrapperIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $secondary;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        margin-left: 20px;
       }
     }
   }
-  .divider {
-    width: 24px;
-    height: 3px;
-    background-color: $primary;
-  }
-  .wrapperButtons {
-    display: flex;
-    gap: 16px;
-  }
+}
+
+//
+.wrapperButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.sucess {
+  border-color: $primary;
+}
+.errorr {
+  border-color: $error;
+}
+.testeSucesso {
+  color: $primary;
+}
+
+.testeError {
+  color: $error;
+}
+
+.testeDefault {
+  color: $secondary;
 }

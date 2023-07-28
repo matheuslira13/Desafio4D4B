@@ -40,6 +40,17 @@ export default {
         firstBtn: "Continuar",
         secondBtn: "Voltar",
       },
+      component: {
+        errorMensage: "O arquivo é muito grande para upload.",
+      },
+      modal: {
+        title: "Tem certeza que deseja excluir este arquivo?",
+        subTitle: "As mudanças serão salvas e a ação não poderá ser desfeita.",
+        btn: {
+          firstBtn: "Voltar",
+          secondBtn: "Excluir",
+        },
+      },
     },
   },
 };

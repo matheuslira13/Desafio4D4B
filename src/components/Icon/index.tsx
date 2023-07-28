@@ -4,10 +4,22 @@ import { ReactComponent as Down } from "./svgs/down.svg";
 import { ReactComponent as Up } from "./svgs/up.svg";
 import { ReactComponent as Repeat } from "./svgs/repeat.svg";
 import { ReactComponent as Error } from "./svgs/error.svg";
+import { ReactComponent as Cancel } from "./svgs/cancel.svg";
+import { ReactComponent as DownCircle } from "./svgs/downCircle.svg";
+import { ReactComponent as UpCircle } from "./svgs/upCircle.svg";
 import styles from "./styles.module.scss";
 
 export type IconsProps = {
-  name: "bell" | "profile" | "down" | "up" | "repeat" | "error";
+  name:
+    | "bell"
+    | "profile"
+    | "down"
+    | "up"
+    | "repeat"
+    | "error"
+    | "cancel"
+    | "upCircle"
+    | "downCircle";
   width: number;
   height: number;
   color?:
@@ -40,6 +52,11 @@ export const Icons = ({ name, color = "black", height, width }: IconsProps) => {
     up: <Up className={selectColor} style={{ height, width }} />,
     repeat: <Repeat className={selectColor} style={{ height, width }} />,
     error: <Error className={selectColor} style={{ height, width }} />,
+    cancel: <Cancel className={selectColor} style={{ height, width }} />,
+    upCircle: <UpCircle className={selectColor} style={{ height, width }} />,
+    downCircle: (
+      <DownCircle className={selectColor} style={{ height, width }} />
+    ),
   };
 
   return show[name];

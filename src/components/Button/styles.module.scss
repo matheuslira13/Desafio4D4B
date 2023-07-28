@@ -60,6 +60,7 @@
   display: flex;
   align-items: center;
 }
+
 .blackBgColor {
   background-color: $black;
   color: $white;
@@ -76,6 +77,18 @@
   background-color: black;
   color: $white;
   border: 1px solid $primary;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.errorBgColor {
+  background-color: $error;
+  color: $white;
+  border: 1px solid $error;
   padding: 8px 16px;
   border-radius: 5px;
   font-size: 13px;
@@ -127,6 +140,18 @@
   color: $gray;
   background-color: "unset";
   border: 1px solid $gray;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.errorColor {
+  color: $error;
+  background-color: "unset";
+  border: 1px solid $error;
   padding: 8px 16px;
   border-radius: 5px;
   font-size: 13px;
