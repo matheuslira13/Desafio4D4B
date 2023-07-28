@@ -28,7 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
               fontWeight="bold"
             />
           </div>
-          <Navbar />
+
           <div className={styles.wrapperSpace}>
             <Balance />
           </div>

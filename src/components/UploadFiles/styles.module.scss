@@ -1,0 +1,91 @@
+@import "../../global.scss";
+
+.containerForm {
+  padding: 13px 16px;
+  width: 70%;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 10px;
+  border-radius: 4px;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    .containerFileInfo {
+      display: flex;
+      flex-direction: column;
+      .errorFileName {
+        font-size: 14px;
+        color: #205266;
+        font-weight: 500;
+        text-align: justify;
+      }
+      .errorMensager {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: #e8225f;
+        gap: 5px;
+      }
+      .sucessName {
+        font-size: 12px;
+        font-weight: 400;
+        color: #71839b;
+      }
+    }
+  }
+  .wrapperIconsSucess {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+  }
+}
+.borderError {
+  border: 2px dashed $error;
+}
+.borderSucess {
+  border: 2px dashed $secondary;
+}
+.nameFilme {
+  font-size: 14px;
+  font-weight: 500;
+  color: $secondary;
+  text-align: justify;
+}
+.modalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .boxModal {
+    background-color: $white;
+    border-radius: 20px;
+    width: 450px;
+    .divider {
+      width: 24px;
+      height: 3px;
+      background-color: $primary;
+      margin-bottom: 10px;
+    }
+    .wrapperIconModal {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -20px;
+      margin-right: -20px;
+    }
+    .containerInfoModal {
+      padding: 27px;
+      .wrapperButtonModal {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
